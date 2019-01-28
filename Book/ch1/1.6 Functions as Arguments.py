@@ -13,6 +13,7 @@ def sum_high_order(n, f):
         k += 1
     return total
 
+
 if __name__ == '__main__':
     naturals_result = sum_high_order(3, sum_naturals)
     cubs_result = sum_high_order(4, sum_cubs)
