@@ -16,7 +16,7 @@ def rationals_are_equal(x, y):
     return number(x) * denom(y) == number(y) * denom(x)
 
 def rational(n, d):
-    rational_gcd = math.gcd(n ,d)
+    rational_gcd = math.gcd(n, d)
     return [n // rational_gcd, d // rational_gcd]
 
 def number(x):
