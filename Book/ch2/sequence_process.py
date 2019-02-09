@@ -3,7 +3,7 @@ from operator import add
 
 # list comprehension for divisors and perfect number
 def divisors(n):
-    return [ x for x in range(1, n) if n % x == 0 ]
+    return [x for x in range(1, n) if n % x == 0]
 
 def get_perfect_number(n):
     return [x for x in range(1, n+1) if sum(divisors(x)) == x]
