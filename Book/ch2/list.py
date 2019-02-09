@@ -48,8 +48,43 @@ def extend_link(s, t):
     else:
         return link(first(s), extend_link(rest(s), t))
 
+def join_link(s, separator):
+    if s == empty:
+        return ''
+    elif rest(s) == empty:
+        return str(first(s))
+    else:
+        return str(first(s)) + separator + join_link(rest(s), separator)
+
+# implementing a mutable link
+def mutable_link():
+
+    contents = empty
+    def dispatch(message, value=None):
+        nonlocal contents
+        if message == 'len':
+            return len_link(contents)
+        elif message == 'getitem':
+            return getitem_link(contents, value)
+        elif message == 'push_first':
+            contents = link(value, contents)
+        elif message == 'pop_first':
+            f = first(contents)
+            contents = rest(contents)
+            return f
+        elif message == 'str':
+            return join_link(contents, ', ')
+    return dispatch
+
 if __name__ == '__main__':
     test_link = link(5,link(4, link(3, link(2, link(1,empty)))))
-    l1 = link(6, link(5, link(4, link(3, link(2, link(1, 'empty'))))))
-    result_link = extend_link(test_link, l1)
-    print(result_link)
+    print(join_link(test_link, '=>'))
+    mutable_link_test = mutable_link()
+    mutable_link_test('push_first', 5)
+    mutable_link_test('push_first', 4)
+    mutable_link_test('push_first', 3)
+    getted_item = mutable_link_test('getitem', 1)
+    print(getted_item)
+    # l1 = link(6, link(5, link(4, link(3, link(2, link(1, 'empty'))))))
+    # result_link = extend_link(test_link, l1)
+    # print(result_link)
