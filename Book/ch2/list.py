@@ -76,15 +76,23 @@ def mutable_link():
             return join_link(contents, ', ')
     return dispatch
 
+def to_mutable_link(source):
+    s = mutable_link()
+    for e in reversed(source):
+        s('push_first', e)
+    return s
+
 if __name__ == '__main__':
-    test_link = link(5,link(4, link(3, link(2, link(1,empty)))))
-    print(join_link(test_link, '=>'))
-    mutable_link_test = mutable_link()
-    mutable_link_test('push_first', 5)
-    mutable_link_test('push_first', 4)
-    mutable_link_test('push_first', 3)
-    getted_item = mutable_link_test('getitem', 1)
-    print(getted_item)
+    # test_link = link(5,link(4, link(3, link(2, link(1,empty)))))
+    # print(join_link(test_link, '=>'))
+    # mutable_link_test = mutable_link()
+    # mutable_link_test('push_first', 5)
+    # mutable_link_test('push_first', 4)
+    # mutable_link_test('push_first', 3)
+    # getted_item = mutable_link_test('getitem', 1)
+    # print(getted_item)
     # l1 = link(6, link(5, link(4, link(3, link(2, link(1, 'empty'))))))
     # result_link = extend_link(test_link, l1)
     # print(result_link)
+    test_source = to_mutable_link([1,2,3])
+    print(test_source('str', ', '))
