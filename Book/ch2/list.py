@@ -94,5 +94,6 @@ if __name__ == '__main__':
     # l1 = link(6, link(5, link(4, link(3, link(2, link(1, 'empty'))))))
     # result_link = extend_link(test_link, l1)
     # print(result_link)
+    #test to_mutable_link
     test_source = to_mutable_link([1,2,3])
     print(test_source('str', ', '))
