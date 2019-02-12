@@ -1,6 +1,18 @@
 import math
 from operator import getitem
+# using constructor and selector layer - 2
+def rational(n, d):
+    # lowest barrier layer - 1
+    rational_gcd = math.gcd(n, d)
+    return [n // rational_gcd, d // rational_gcd]
 
+def number(x):
+    return x[0]
+
+def denom(x):
+    return x[1]
+
+# using rational to perform calculation layer - 3
 def add_rationals(x, y):
     nx, dx = number(x), denom(x)
     ny, dy = number(y), denom(y)
@@ -15,15 +27,14 @@ def print_rational(x):
 def rationals_are_equal(x, y):
     return number(x) * denom(y) == number(y) * denom(x)
 
-def rational(n, d):
-    rational_gcd = math.gcd(n, d)
-    return [n // rational_gcd, d // rational_gcd]
+def square_rational(x):
+    return mul_rationals(x, x)
 
-def number(x):
-    return x[0]
+def square_rational_violate_once(x):
+    return rational(number(x) * number(x), denom(x) * denom(x))
 
-def denom(x):
-    return x[1]
+def square_rational_violate_twice(x):
+    return [x[0] * x[0], x[1] * x[1]]
 
 if __name__ == '__main__':
     r1 = rational(1, 2)
