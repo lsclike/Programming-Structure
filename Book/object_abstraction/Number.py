@@ -1,4 +1,4 @@
-from math import atan2
+from math import atan2, cos, sin, pi
 class Number:
     def __add__(self, other):
         return self.add(other)
@@ -15,6 +15,7 @@ class Complex(Number):
         return ComplexMA(magnitute, self.angle + other.angle)
 
 class ComplexRI(Complex):
+    # constructs a complex number from real and imaginary parts
     def __init__(self, real, img):
         self.real = real
         self.img = img
@@ -29,3 +30,19 @@ class ComplexRI(Complex):
 
     def __repr__(self):
         return 'ComplexRI({0:g}, {1:g})'.format(self.real, self.img)
+
+class ComplexMA(Complex):
+    def __init__(self, magnitude, angle):
+        self.magnitude = magnitude
+        self.angle = angle
+
+    @property
+    def real(self):
+        return self.magnitude * cos(self.angle)
+
+    @property
+    def img(self):
+        return self.magnitude * sin(self.angle)
+
+    def __repr__(self):
+        return
