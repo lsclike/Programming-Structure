@@ -11,7 +11,7 @@ class Complex(Number):
         return ComplexRI(self.real + other.real, self.img + other.img)
 
     def mul(self, other):
-        magnitute = self.magnitute * other.magnitute
+        magnitute = self.magnitude * other.magnitude
         return ComplexMA(magnitute, self.angle + other.angle)
 
 class ComplexRI(Complex):
@@ -45,4 +45,9 @@ class ComplexMA(Complex):
         return self.magnitude * sin(self.angle)
 
     def __repr__(self):
-        return
+        return 'ComplexMA({0:g}, {1:g})'.format(self.magnitude, self.angle)
+
+if __name__ == '__main__':
+    ma = ComplexMA(2, pi/2)
+    ma1 = complex(3, pi/3)
+    print(help(ma))
