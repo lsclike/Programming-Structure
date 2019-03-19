@@ -7,6 +7,7 @@ class Number:
         return self.mul(other)
 
 class Complex(Number):
+
     def add(self, other):
         return ComplexRI(self.real + other.real, self.img + other.img)
 
