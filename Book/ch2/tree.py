@@ -9,3 +9,7 @@ def label(tree):
 
 def branches(tree):
     return tree[1:]
+
+def is_tree(tree):
+    if type(tree) != list or len(tree) < 1:
+        return False
