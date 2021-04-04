@@ -24,3 +24,11 @@ def tree(root_label, branches=[]):
 print(tree(1))
 
 print(tree(2))
+
+def fib_tree(n):
+        if n == 0 or n == 1:
+            return tree(n)
+        else:
+            left, right = fib_tree(n-2), fib_tree(n-1)
+            fib_n = label(left) + label(right)
+            return tree(fib_n, [left, right])
