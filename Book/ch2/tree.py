@@ -32,3 +32,10 @@ def fib_tree(n):
             left, right = fib_tree(n-2), fib_tree(n-1)
             fib_n = label(left) + label(right)
             return tree(fib_n, [left, right])
+
+def count_leaves(tree):
+      if is_leaf(tree):
+          return 1
+      else:
+          branch_counts = [count_leaves(b) for b in branches(tree)]
+          return sum(branch_counts)
