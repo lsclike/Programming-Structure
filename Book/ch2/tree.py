@@ -39,3 +39,14 @@ def count_leaves(tree):
       else:
           branch_counts = [count_leaves(b) for b in branches(tree)]
           return sum(branch_counts)
+
+def partition_tree(n, m):
+
+        if n == 0:
+            return tree(True)
+        elif n < 0 or m == 0:
+            return tree(False)
+        else:
+            left = partition_tree(n-m, m)
+            right = partition_tree(n, m-1)
+            return tree(m, [left, right])
