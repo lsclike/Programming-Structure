@@ -35,6 +35,14 @@ def count_leaves(tree):
         branches_count = [count_leaves(branch) for branch in branches(tree)]
         return sum(branches_count)
 
+def right_binarize(tree):
+        """Construct a right-branching binary tree."""
+        if is_leaf(tree):
+            return tree
+        if len(tree) > 2:
+            tree = [tree[0], tree[1:]]
+        return [right_binarize(b) for b in tree]
+
 if __name__ == '__main__':
     t = tree(3, [tree(1), tree(2, [tree(1), tree(1)])])
     fib_test =fib_tree(5)
