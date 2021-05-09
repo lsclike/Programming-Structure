@@ -5,5 +5,4 @@ def make_adder(n):
         return k+n
     return adder
 	    
-test = make_adder(3)
-test(2)
+test = make_adder(1)(2)
