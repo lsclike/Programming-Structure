@@ -11,5 +11,12 @@ def compose1(f,g):
         return f(g(x))
     return h
 
+def level_1(n):
+    def level_2(k):
+        def level_3(l):
+            return l+k+n
+        return level_3
+    return level_2
+
 inner_function = compose1(square, make_adder(2))
 print(inner_function(4))
