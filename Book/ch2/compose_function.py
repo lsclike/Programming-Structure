@@ -18,5 +18,6 @@ def level_1(n):
         return level_3
     return level_2
 
-inner_function = compose1(square, make_adder(2))
-print(inner_function(4))
+#inner_function = compose1(square, make_adder(2))
+#print(inner_function(4))
+compose1(square, make_adder(2))(3)
