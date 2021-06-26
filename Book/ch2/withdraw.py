@@ -11,4 +11,3 @@ def make_withdraw(balance):
 if __name__ == '__main__':
     new_withdraw = make_withdraw(100)
     print(new_withdraw(25))
-    print(new_withdraw(25))
