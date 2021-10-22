@@ -27,6 +27,8 @@ def print_rational(x):
 def rationals_are_equal(x, y):
     return number(x) * denom(y) == number(y) * denom(x)
 
+
+## violate abstract barrier
 def square_rational(x):
     return mul_rationals(x, x)
 

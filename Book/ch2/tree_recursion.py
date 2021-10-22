@@ -36,7 +36,6 @@ def count_leaves(tree):
         return sum(branches_count)
 
 def right_binarize(tree):
-        """Construct a right-branching binary tree."""
         if is_leaf(tree):
             return tree
         if len(tree) > 2:
