@@ -41,6 +41,19 @@ def hailstone(n):
     ...       ['While', 'For'])
     True
     """
+    total = 0
+    if n==1:
+        print(1)
+        total = 1
+    elif (n%2==0):
+        print(int(n))
+        hailstone(n/2)
+        total +=1
+    else:
+        print(int(n))
+        hailstone(3*n+1)
+        total += 1
+    return total
     
 
 def summation(n, term):
