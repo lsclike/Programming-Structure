@@ -14,6 +14,7 @@ def finbo(number):
     elif number == 1:
         return 1
     else:
+        # left function call evaluate finish before second one
         return finbo(number-1) + finbo(number-2)
 
     
