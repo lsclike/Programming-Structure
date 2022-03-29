@@ -14,6 +14,13 @@ def couple(s1, s2):
     """
     assert len(s1) == len(s2)
     "*** YOUR CODE HERE ***"
+    middle = s1 + s2
+    result = []
+    total_len = len(middle)
+    for i in range(int(total_len/2)):
+        result.append([middle[i], middle[int((total_len/2))+i]])
+    return result
+
 
 def enumerate(s, start=0):
     """Returns a list of lists, where the i-th list contains i+start and
