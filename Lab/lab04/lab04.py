@@ -30,7 +30,11 @@ def enumerate(s, start=0):
     >>> enumerate('five', 5)
     [[5, 'f'], [6, 'i'], [7, 'v'], [8, 'e']]
     """
-    "*** YOUR CODE HERE ***"
+    result = []
+    for i in range(len(s)):
+        temp = [i+start, s[i]]
+        result.append(temp)
+    return result
 
 from math import sqrt
 def distance(city1, city2):
