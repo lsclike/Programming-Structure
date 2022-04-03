@@ -48,7 +48,10 @@ def distance(city1, city2):
     >>> distance(city3, city4)
     5.0
     """
-    "*** YOUR CODE HERE ***"
+    if change_abstraction.changed:
+        return sqrt((city1["lat"]-city2["lat"])**2+(city1["lon"]-city2["lon"])**2)
+    else:
+        return sqrt((city1[1]-city2[1])**2+(city1[2]-city2[2])**2)
 
 def closer_city(lat, lon, city1, city2):
     """
@@ -65,6 +68,17 @@ def closer_city(lat, lon, city1, city2):
     'Bucharest'
     """
     "*** YOUR CODE HERE ***"
+    if change_abstraction.changed:
+        city1_distance = sqrt((lat-city1["lat"])**2+(lon-city1["lon"])**2)
+        city2_distance = sqrt((lat-city2["lat"])**2+(lon-city2["lon"])**2)
+    else:
+        city1_distance = sqrt((lat-city1[1])**2+(lon-city1[2])**2)
+        city2_distance = sqrt((lat-city2[1])**2+(lon-city2[2])**2)
+    
+    if city1_distance >= city2_distance:
+        return city2[0]
+    else:
+        return city1[0]
 
 def check_abstraction():
     """
