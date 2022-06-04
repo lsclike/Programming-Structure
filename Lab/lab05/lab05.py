@@ -23,7 +23,12 @@ def riffle(deck):
     [0, 10, 1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19]
     """
     "*** YOUR CODE HERE ***"
-    return _______
+    result = []
+    for i in range(len(deck)):
+      if i < len(deck)/2:
+        middle = [deck[i], deck[int(i+len(deck)/2)]]
+        result = result + middle
+    return result
 
 
 def berry_finder(t):
