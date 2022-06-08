@@ -50,6 +50,13 @@ def berry_finder(t):
     """
     "*** YOUR CODE HERE ***"
     #todo
+    berry_exist = False
+    if len(t)==1:
+      if t[0]=='berry':
+        berry_exist = True
+    else:
+      berry_finder(t[1:])
+    return berry_exist
 
 
 def sprout_leaves(t, leaves):
