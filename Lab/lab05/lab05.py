@@ -56,6 +56,7 @@ def berry_finder(t):
       for temp in branches(t):
         berry_finder(temp)
     return False
+    return False
 
 
 def sprout_leaves(t, leaves):
