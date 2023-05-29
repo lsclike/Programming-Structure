@@ -54,8 +54,8 @@ def berry_finder(t):
         return True
     else:
       for temp in branches(t):
-        berry_finder(temp)
-    return False
+        if berry_finder(temp):
+          return True
     return False
 
 
