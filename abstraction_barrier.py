@@ -1,3 +1,7 @@
+# Part of program use the data structure
+# Treat the data structure as
+# Using what functions
+
 def pair(x,y):
     def result(index):
         if index == 0:
