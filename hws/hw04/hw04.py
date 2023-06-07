@@ -140,6 +140,10 @@ def totals_tree(m):
     True
     """
     "*** YOUR CODE HERE ***"
+    if is_planet(m):
+      return tree(label=total_weight(m))
+    else:
+      return tree(label=total_weight(m), branches=[totals_tree(end(left(m))),totals_tree(end(right(m)))])
 
 
 def replace_leaf(t, find_value, replace_value):
