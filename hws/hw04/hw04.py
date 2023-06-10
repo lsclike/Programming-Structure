@@ -198,6 +198,13 @@ def preorder(t):
     [2, 4, 6]
     """
     "*** YOUR CODE HERE ***"
+    result_list = []
+    if is_leaf(t):
+      result_list.insert(0,label(t))
+      return result_list
+    else:
+      for subtree in branches(t):
+
 
 
 def has_path(t, phrase):
