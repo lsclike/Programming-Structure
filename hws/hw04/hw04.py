@@ -200,11 +200,14 @@ def preorder(t):
     "*** YOUR CODE HERE ***"
     result_list = []
     if is_leaf(t):
-      result_list.insert(0,label(t))
+      result_list.append(label(t))
       return result_list
     else:
       for subtree in branches(t):
-
+        result_list += preorder(subtree)
+      
+      result_list.insert(0,label(t))
+      return result_list
 
 
 def has_path(t, phrase):
