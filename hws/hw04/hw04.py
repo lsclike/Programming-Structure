@@ -200,10 +200,11 @@ def preorder(t):
     "*** YOUR CODE HERE ***"
     result_list = []
     if is_leaf(t):
-      return label(t)
+      result_list.append(label(t))
+      return result_list
     else:
       for subtree in branches(t):
-        result_list.append(preorder(subtree))
+        result_list += preorder(subtree)
       
       result_list.insert(0,label(t))
       return result_list
@@ -240,7 +241,10 @@ def has_path(t, phrase):
     assert len(phrase) > 0, 'no path for empty phrases.'
     "*** YOUR CODE HERE ***"
     #working on the phrase
-
+    if len(phrase)==1:
+      return phrase[0] == label(t)
+    else:
+      return label(t) == phrase[0] and any([ has_path(subtree, phrase[1:]) for subtree in branches(t)])
 
 def interval(a, b):
     """Construct an interval from a to b."""
