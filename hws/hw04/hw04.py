@@ -192,6 +192,8 @@ def preorder(t):
     would be visited by a preorder traversal (see problem description).
 
     >>> numbers = tree(1, [tree(2), tree(3, [tree(4), tree(5)]), tree(6, [tree(7)])])
+
+    
     >>> preorder(numbers)
     [1, 2, 3, 4, 5, 6, 7]
     >>> preorder(tree(2, [tree(4, [tree(6)])]))
