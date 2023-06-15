@@ -188,6 +188,7 @@ def add_trees(t1, t2):
     """
     "*** YOUR CODE HERE ***"
     # working on adding trees
+    # recursive to reconstruct position
 
 
 def build_successors_table(tokens):
