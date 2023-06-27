@@ -4,3 +4,4 @@ Prompt day 4 - iterative
 Prompt day 5 - Summary
 Prompt day 6 - Play SDK
 Prompt day 7 - Setup chatbot 1
+Prompt day 7 - Setup chatbot 2
